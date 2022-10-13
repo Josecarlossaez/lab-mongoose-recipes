@@ -33,28 +33,35 @@ mongoose
   //     "creator": "Chef Jennifer",
 
 //  * })
-
+   
   // * IT 2 *  return Recipe.insertMany(data)
   
-  // * IT 3*   return Recipe.find().select("title")
+   return Recipe.find().select("title")
 
   // * IT 4 *  return Recipe.findOneAndUpdate({title:"Rigatoni alla Genovese"},{duration:100},{new:true})
     
-  return Recipe.deleteOne({title:'Carrot Cake'})
+    //return Recipe.deleteOne({title:'Carrot Cake'})
   
   })
   .then((response) => {
    // console.log("receta añadida");
    //console.log("todas recetas añadidas")
+   
    console.log("receta borrada")
     console.log(response);
 
-    
+     return mongoose.disconnect()
+
+  
     // Run your code here, after you have insured that the connection was made
-
-
-
-  })
+ })
+ .then((response) =>{
+  console.log(response);
+  console.log("desconectado");
+ })
   .catch(error => {
     console.error('Error connecting to the database', error);
+
+    
+
   });
