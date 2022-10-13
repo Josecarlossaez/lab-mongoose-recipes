@@ -15,7 +15,7 @@ mongoose
     // Before adding any recipes to the database, let's remove all existing ones
     //return Recipe.deleteMany()
 
-  //  return Recipe.create({
+  // * return Recipe.create({
     
   //     "title": "Chocolate Chip Cookies",
   //     "level": "Amateur Chef",
@@ -32,11 +32,15 @@ mongoose
   //     "duration": 30,
   //     "creator": "Chef Jennifer",
 
-  //return Recipe.insertMany(data)
+//  * })
+
+  // * return Recipe.insertMany(data)
   
-  return Recipe.find().select("title")
+  // * return Recipe.find().select("title")
+
+   return Recipe.findOneAndUpdate({title:"Rigatoni alla Genovese"},{duration:100},{new:true})
     
-  //   })
+  
   })
   .then((response) => {
    // console.log("receta añadida");
