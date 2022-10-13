@@ -34,17 +34,19 @@ mongoose
 
 //  * })
 
-  // * return Recipe.insertMany(data)
+  // * IT 2 *  return Recipe.insertMany(data)
   
-  // * return Recipe.find().select("title")
+  // * IT 3*   return Recipe.find().select("title")
 
-   return Recipe.findOneAndUpdate({title:"Rigatoni alla Genovese"},{duration:100},{new:true})
+  // * IT 4 *  return Recipe.findOneAndUpdate({title:"Rigatoni alla Genovese"},{duration:100},{new:true})
     
+  return Recipe.deleteOne({title:'Carrot Cake'})
   
   })
   .then((response) => {
    // console.log("receta añadida");
-   console.log("todas recetas añadidas")
+   //console.log("todas recetas añadidas")
+   console.log("receta borrada")
     console.log(response);
 
     
